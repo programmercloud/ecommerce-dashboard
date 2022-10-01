@@ -114,14 +114,14 @@ li:hover:not(:last-child) {
   padding: 35px 45px;
   overflow-x: overlay;
 }
-.content .ust {
+.content .top {
   display: flex;
   justify-content: space-between;
 }
-.content .ust .ara {
+.content .top .search {
   position: relative;
 }
-.content .ust .ara input {
+.content .top .search input {
   background: #ddd9f2;
   padding: 10px 150px;
   border-radius: 6px;
@@ -130,14 +130,14 @@ li:hover:not(:last-child) {
   padding-left: 15px;
 }
 
-.content .ust .ara i {
+.content .top .search i {
   position: absolute;
   right: 10px;
   top: 25%;
   color: #5443c3;
   cursor: pointer;
 }
-.content .ust .user i {
+.content .top .user i {
   padding: 0 10px;
   color: #5443c3;
   font-size: 20px;
@@ -183,8 +183,6 @@ li:hover:not(:last-child) {
   padding: 15px;
   background: #f6f5fb;
   text-align: center;
-  diplay: flex;
-  flex-direction: column;
 }
 .content .product .products .product:hover:before {
   content: "";
@@ -242,10 +240,10 @@ li:hover:not(:last-child) {
   .sidebar + #mmenu {
     transform: translate(50px);
   }
-  .content .ust {
+  .content .top {
     flex-direction: column;
   }
-  .content .ust .ara {
+  .content .top .search {
     padding-bottom: 25px;
   }
   #mmenu {
@@ -261,11 +259,11 @@ li:hover:not(:last-child) {
   .content .product .products .product {
     width: 100%;
   }
-  .content .ust .ara input {
+  .content .top .search input {
     background: #ddd9f2;
     padding: 10px 45px;
   }
-  .content .ust .ara i {
+  .content .top .search i {
     top: 16%;
   }
   .content .categories {
