@@ -165,18 +165,18 @@ li:hover:not(:last-child) {
   opacity: 0.6;
   padding-bottom: 0;
 }
-.content .product {
+.content .all-products {
   width: 100%;
 }
-.content .product .title {
+.content .all-products .title {
   padding: 15px 0;
   color: #5443c3;
 }
-.content .product .products {
+.content .products {
   width: 100%;
   display: flex;
 }
-.content .product .products .product {
+.content .product {
   width: 33.3%;
   position: relative;
   margin: 5px 5px;
@@ -184,7 +184,7 @@ li:hover:not(:last-child) {
   background: #f6f5fb;
   text-align: center;
 }
-.content .product .products .product:hover:before {
+.content .product:hover:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -193,7 +193,7 @@ li:hover:not(:last-child) {
   top: 0;
   background: rgba(255, 255, 255, 0.6);
 }
-.content .product .products .product:hover .addbutton {
+.content .product:hover .addbutton {
   visibility: visible;
   opacity: 1;
   bottom: 50%;
@@ -213,17 +213,17 @@ li:hover:not(:last-child) {
   border-radius: 5px;
   background: #5443c3;
 }
-.content .product .products .product img {
+.content .product img {
   padding: 10px;
   width: 125px;
   height: 130px;
 }
-.content .product .products .product i {
+.content .product i {
   float: right;
   color: #b5b4ba;
 }
 
-.content .product .products .product .subtitle {
+.content .product .subtitle {
   display: flex;
   justify-content: space-between;
 }
@@ -256,7 +256,7 @@ li:hover:not(:last-child) {
   .content .product .products {
     display: block;
   }
-  .content .product .products .product {
+  .content .product {
     width: 100%;
   }
   .content .top .search input {
