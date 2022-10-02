@@ -1,55 +1,64 @@
 @import url(https://fonts.googleapis.com/css?family=MuseoModerno);
+
 * {
   margin: 0;
   padding: 0;
   transition: 0.5s all;
   box-sizing: border-box;
   text-decoration: none;
-  border: 0;
-  outline: 0;
+  border: none;
+  outline: none;
   list-style: none;
 }
+
 html,
 body {
   width: 100%;
   height: 100%;
 }
+
 body {
   font-family: "MuseoModerno";
   display: flex;
   overflow: hidden;
 }
+
 button {
   cursor: pointer;
 }
+
 .sidebar {
   width: 250px;
   background: #5443c3;
   border-radius: 0 30px 30px 0;
   padding: 30px;
 }
-#mobilmenu {
+
+#mobile-menu {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   z-index: -8888;
 }
-#mobilmenu:checked + .sidebar {
+
+#mobile-menu:checked + .sidebar {
   transform: translate(280px);
   z-index: 1;
 }
-#mobilmenu:checked + .sidebar + #mmenu {
+
+#mobile-menu:checked + .sidebar + #mmenu {
   transform: translate(50px);
   color: #fff;
 }
 
-#mobilmenu:checked + .sidebar + #mmenu i:first-child {
+#mobile-menu:checked + .sidebar + #mmenu i:first-child {
   visibility: hidden;
-  opacity: 0;
   position: absolute;
+  opacity: 0;
   top: -50%;
 }
-#mobilmenu:checked + .sidebar + #mmenu i:last-child {
+
+#mobile-menu:checked + .sidebar + #mmenu i:last-child {
   position: absolute;
   visibility: visible;
   opacity: 1;
@@ -66,28 +75,30 @@ button {
 #mmenu {
   padding: 15px;
   opacity: 0;
-  visibility: hidden;
   position: absolute;
   font-size: 22px;
 }
+
 .sidebar .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: #fff;
 }
-.sidebar logo i,
-h2 {
+
+.sidebar .logo i,
+.sidebar .logo h2 {
   font-size: 24px;
   padding: 4px;
 }
+
 .sidebar .menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 70px 0px;
+  padding: 70px 0;
 }
+
 .sidebar .menu ul li {
   padding: 13px 15px;
   padding-right: 30px;
@@ -97,36 +108,42 @@ h2 {
   font-size: 15px;
   cursor: pointer;
 }
+
 .sidebar .menu ul li:first-child,
-li:hover:not(:last-child) {
+.sidebar .menu ul li:hover:not(:last-child) {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
+
 .sidebar .menu ul li:last-child {
   position: absolute;
   bottom: 0;
 }
+
 .sidebar .menu ul li i {
   margin-right: 25px;
 }
+
 .content {
   flex: 1;
   padding: 35px 45px;
   overflow-x: overlay;
 }
+
 .content .top {
   display: flex;
   justify-content: space-between;
 }
+
 .content .top .search {
   position: relative;
 }
+
 .content .top .search input {
   background: #ddd9f2;
   padding: 10px 150px;
   border-radius: 6px;
   font-weight: 600;
-
   padding-left: 15px;
 }
 
@@ -137,20 +154,24 @@ li:hover:not(:last-child) {
   color: #5443c3;
   cursor: pointer;
 }
+
 .content .top .user i {
   padding: 0 10px;
   color: #5443c3;
   font-size: 20px;
   cursor: pointer;
 }
+
 .content .categories {
   width: 100%;
   display: flex;
 }
+
 .content #heading {
   padding-top: 30px;
   color: #5443c3;
 }
+
 .content .categories .category {
   width: 33.3%;
   color: #fff;
@@ -159,23 +180,28 @@ li:hover:not(:last-child) {
   border-radius: 10px;
   padding: 14px;
 }
+
 .content .categories .category img {
   padding: 5px 15px;
   float: right;
-  opacity: 0.6;
   padding-bottom: 0;
+  opacity: 0.6;
 }
+
 .content .all-products {
   width: 100%;
 }
+
 .content .all-products .title {
   padding: 15px 0;
   color: #5443c3;
 }
+
 .content .products {
   width: 100%;
   display: flex;
 }
+
 .content .product {
   width: 33.3%;
   position: relative;
@@ -184,7 +210,8 @@ li:hover:not(:last-child) {
   background: #f6f5fb;
   text-align: center;
 }
-.content .product:hover:before {
+
+.content .product:hover::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -193,31 +220,36 @@ li:hover:not(:last-child) {
   top: 0;
   background: rgba(255, 255, 255, 0.6);
 }
+
 .content .product:hover .addbutton {
   visibility: visible;
   opacity: 1;
   bottom: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.5s all;
+  transition: all 0.5s;
   left: 50%;
 }
+
 .addbutton {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  transition: 0.5s all;
+  transition: all 0.5s;
 }
+
 .addbutton button {
   padding: 5px 25px;
   color: #fff;
   border-radius: 5px;
-  background: #5443c3;
+  background: #5453c3;
 }
+
 .content .product img {
   padding: 10px;
   width: 125px;
   height: 130px;
 }
+
 .content .product i {
   float: right;
   color: #b5b4ba;
@@ -228,24 +260,34 @@ li:hover:not(:last-child) {
   justify-content: space-between;
 }
 
-/* mobil*/
+.content .product .price h1 {
+  font-size: 20px;
+}
+
+/* Responsive */
+
 @media (max-width: 768px) {
   .sidebar {
     margin-left: -295px;
   }
+
   .content {
     width: 100%;
     margin: 5px;
   }
+
   .sidebar + #mmenu {
     transform: translate(50px);
   }
+
   .content .top {
     flex-direction: column;
   }
-  .content .top .search {
+
+  .content .search {
     padding-bottom: 25px;
   }
+
   #mmenu {
     opacity: 1;
     visibility: visible;
@@ -253,33 +295,37 @@ li:hover:not(:last-child) {
     color: #000;
     position: relative;
   }
-  .content .product .products {
+
+  .content .products {
     display: block;
   }
+
   .content .product {
     width: 100%;
   }
+
   .content .top .search input {
-    background: #ddd9f2;
     padding: 10px 45px;
   }
+
   .content .top .search i {
     top: 16%;
   }
+
   .content .categories {
     display: block;
   }
+
   .content .categories .category {
     width: 100%;
     margin-top: 5px;
   }
+
   .content .categories .category img {
     display: none;
   }
+
   .user {
     display: flex;
-  }
-  .content {
-    padding-top: 10px;
   }
 }
